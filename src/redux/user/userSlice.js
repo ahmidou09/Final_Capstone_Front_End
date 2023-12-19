@@ -58,13 +58,13 @@ const userSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         if (action.payload.status === 'created') {
           state.loggedIn = true;
-          state.loading = false
+          state.loading = false;
           state.user = (action.payload.user);
           state.loggedIn = (action.payload.logged_in);
           state.wrongData = '';
         } else if (action.payload.status === 401) {
           state.wrongData = 'Wrong password or email';
-          state.loading = false
+          state.loading = false;
         }
       })
 

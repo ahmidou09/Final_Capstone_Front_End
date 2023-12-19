@@ -21,7 +21,7 @@ const Registrations = () => {
     }));
   };
   return (
-    <form onSubmit={handleSubmit} className='form'>
+    <form onSubmit={handleSubmit} className="form">
       {wrongData}
       <h2>Create a new account</h2>
       <input type="email" name="email" placeholder="email@example.com" ref={email} />

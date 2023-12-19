@@ -13,7 +13,7 @@ const LandingPage = () => {
     <>
 
       {login ? <Login /> : <Registrations />}
-      <button type="button" className='toggleLogin' onClick={() => setLogin(!login)}>{login ? 'Register' : 'Login'}</button>
+      <button type="button" className="toggleLogin" onClick={() => setLogin(!login)}>{login ? 'Register' : 'Login'}</button>
     </>
   );
 };

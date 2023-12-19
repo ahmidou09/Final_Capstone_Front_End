@@ -20,7 +20,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='form'>
+    <form onSubmit={handleSubmit} className="form">
       {wrongData}
       <h2>Login</h2>
       <input type="email" name="email" placeholder="email@example.com" ref={email} />
