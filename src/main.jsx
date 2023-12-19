@@ -1,15 +1,15 @@
-import { render } from 'preact'
-import { App } from './app.jsx'
+import { render } from 'preact';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css'
-import store from './redux/store.js'
+import App from './app';
+import './index.css';
+import store from './redux/store';
 
 render(
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-     </Provider>
-    </BrowserRouter>
-    , document.getElementById('app')
-)
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
+  document.getElementById('app'),
+);
