@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Routes, Route, useNavigate, Navigate,
+  Routes, Route, useNavigate,
 } from 'react-router-dom';
 import { checkLogin } from './redux/user/userSlice';
 import Dashboard from './components/pages/Home/Dashboard';
@@ -26,14 +26,13 @@ const App = () => {
     if (loggedIn) {
       history('/dashboard');
     } else if (loggedIn === false) {
-      history('/');
+      history('/login');
     }
   }, [loggedIn]);
 
   return (
     <div>
       <Routes>
-        <Route index element={<Navigate replace to="login" />} />
         <Route path="/login" element={<LandingPage />} />
         <Route path="/register" element={<LandingPage />} />
         <Route element={<AppLayout />}>
