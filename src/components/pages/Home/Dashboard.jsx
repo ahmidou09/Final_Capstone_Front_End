@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { logout } from '../redux/user/userSlice';
+import { logout } from '../../../redux/user/userSlice';
+import Cars from '../Car/Cars';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -9,8 +10,8 @@ const Dashboard = () => {
   };
   return (
     <>
-      <h1>Dashboard</h1>
       <button type="button" onClick={handleLogout}>Log Out</button>
+      <Cars />
     </>
   );
 };

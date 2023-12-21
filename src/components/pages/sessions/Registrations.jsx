@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { register } from '../redux/user/userSlice';
+import { register } from '../../../redux/user/userSlice';
 
 const Registrations = () => {
   const email = useRef();
