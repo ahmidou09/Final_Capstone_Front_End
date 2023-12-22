@@ -32,16 +32,22 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/login" element={<LandingPage />} />
-      <Route path="/register" element={<LandingPage />} />
-      <Route element={<AppLayout />}>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/reserve-form" element={<ReserveForm />} />
-        <Route path="/my-reservations" element={<MyReservations />} />
-        <Route path="/add-car-item" element={<AddCarItem />} />
-        <Route path="/delete-car-item" element={<DeleteCarItem />} />
+    <Route path="/login" element={<LandingPage />} />
+    <Route path="/register" element={<LandingPage />} />
+
+    <Route element={<AppLayout />}>
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/reserve-form" element={<ReserveForm />} />
+      <Route path="/my-reservations" element={<MyReservations />} />
+      <Route path="/add-car-item" element={<AddCarItem />} />
+      <Route path="/delete-car-item" element={<DeleteCarItem />} />
+
+      <Route path="/items" element={<Outlet />}>
+        <Route path=":id" element={<ItemDetail />} />
       </Route>
-    </Routes>
+    </Route>
+  </Routes>
+
   );
 };
 
