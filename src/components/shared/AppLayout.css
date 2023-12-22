@@ -28,13 +28,13 @@ li {
   margin-bottom: 10px;
 }
 
-Link {
+link {
   text-decoration: none;
   color: #fff;
   font-size: 16px;
 }
 
-Link:hover {
+link:hover {
   color: #007bff;
 }
 

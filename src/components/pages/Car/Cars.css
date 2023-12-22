@@ -35,10 +35,6 @@ button:hover {
 
 /* AddCarItem.css */
 
-h1 {
-  color: #333;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -56,9 +52,4 @@ input {
   padding: 8px;
   margin-top: 5px;
   margin-bottom: 10px;
-}
-
-checkbox {
-  margin-left: 5px;
-  background-color: aquamarine;
 }
