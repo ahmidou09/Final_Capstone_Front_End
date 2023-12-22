@@ -14,7 +14,6 @@ import DeleteCarItem from './components/pages/Car/DeleteCarItem';
 import AppLayout from './components/shared/AppLayout';
 import CarDetail from './components/pages/Car/CarDetail';
 
-
 const App = () => {
   const { loggedIn } = useSelector((state) => state.user);
   const history = useNavigate();
