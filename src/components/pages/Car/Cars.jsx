@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Cars.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -24,7 +25,9 @@ const Cars = () => {
           <ul>
             {cars.map((car) => (
               <li key={car.id} className="car-item">
-                {car.name}
+                <Link to={`/items/${car.id}`}>
+                  {car.name}
+                </Link>
                 {' '}
                 - $
                 {car.cost}
