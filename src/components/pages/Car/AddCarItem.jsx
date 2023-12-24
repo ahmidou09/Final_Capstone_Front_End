@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCar, fetchCars } from '../../../redux/cars/carsSlice';
+import './style/AddCarItem.css';
 
 const AddCarItem = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const AddCarItem = () => {
       await dispatch(addCar(carData));
       dispatch(fetchCars());
     } catch (error) {
-      console.error('Error adding car:', error);
+      throw Error('Error adding car:', error);
     }
   };
 
@@ -19,12 +20,13 @@ const AddCarItem = () => {
     availability: false,
     photo: '',
     cost: 0,
+    description: '',
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((pre) => ({
-      ...pre,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
   };
@@ -37,13 +39,14 @@ const AddCarItem = () => {
       availability: false,
       photo: '',
       cost: 0,
+      description: '',
     });
   };
 
   return (
-    <div>
+    <div className="addCarContainer">
       <h1>Add Car Item</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="addCarForm">
         <label htmlFor="name">
           Name:
           <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
@@ -66,6 +69,16 @@ const AddCarItem = () => {
         <label htmlFor="Cost">
           Cost:
           <input type="number" name="cost" value={formData.cost} onChange={handleChange} required />
+        </label>
+        <label htmlFor="description">
+          description:
+          <textarea
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            required
+          />
         </label>
         <button type="submit">Add Car</button>
       </form>

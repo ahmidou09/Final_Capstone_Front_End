@@ -1,0 +1,33 @@
+.addCarContainer {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.addCarForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addCarForm label {
+  margin-bottom: 10px;
+}
+
+.addCarForm input,
+.addCarForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.addCarForm button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.addCarForm button:hover {
+  background-color: #45a049;
+}
