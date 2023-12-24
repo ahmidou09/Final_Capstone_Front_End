@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './Cars.css';
+import './style/DeleteCarItem.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchCars, deleteCar, selectCars, selectCarsStatus,
@@ -20,24 +20,33 @@ const DeleteCarItem = () => {
   };
 
   return (
-    <div className="cars-container">
+    <div className="deleteCarContainer">
       <h1>List of Cars</h1>
       {status === 'loading' && <p>Loading...</p>}
       {status === 'failed' && <p>Error loading cars.</p>}
       {status === 'succeeded' && (
         <div>
-          <ul>
+          <ul className="carList">
             {cars.map((car) => (
-              <li key={car.id} className="car-item">
-                {car.name}
-                {' '}
-                - $
-                {car.cost}
-                {' '}
-                {car.availability ? 'available' : 'not available'}
-                {' '}
-                {car.photo}
-                <button type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button>
+              <li key={car.id} className="carItem">
+                <div className="carImage">
+                  <img src={car.photo} alt={car.name} />
+                </div>
+                <div className="carDetails">
+                  <p>{car.name}</p>
+                  <p>
+                    $
+                    {car.cost}
+                  </p>
+                  <p>{car.availability ? 'Available' : 'Not Available'}</p>
+                </div>
+                <button
+                  type="button"
+                  className="deleteButton"
+                  onClick={() => handleDeleteCar(car.id)}
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>

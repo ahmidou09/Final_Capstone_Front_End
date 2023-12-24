@@ -1,0 +1,48 @@
+.deleteCarContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carList {
+  list-style: none;
+  padding: 0;
+}
+
+.carItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.carImage {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.carImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.carDetails {
+  flex-grow: 1;
+}
+
+.deleteButton {
+  background-color: #ff3333;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #cc0000;
+}
