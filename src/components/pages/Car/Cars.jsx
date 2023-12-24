@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './Cars.css';
 import { useDispatch, useSelector } from 'react-redux';
+import CarsList from './CarsList';
 import {
-  fetchCars, selectCars, selectCarsStatus,
+  fetchCars,
+  selectCars,
+  selectCarsStatus,
 } from '../../../redux/cars/carsSlice';
 
 const Cars = () => {
@@ -17,29 +18,9 @@ const Cars = () => {
 
   return (
     <div className="cars-container">
-      <h1>List of Cars</h1>
       {status === 'loading' && <p>Loading...</p>}
       {status === 'failed' && <p>Error loading cars.</p>}
-      {status === 'succeeded' && (
-        <div>
-          <ul>
-            {cars.map((car) => (
-              <li key={car.id} className="car-item">
-                <Link to={`/items/${car.id}`}>
-                  {car.name}
-                </Link>
-                {' '}
-                - $
-                {car.cost}
-                {' '}
-                {car.availability ? 'available' : 'not available'}
-                {' '}
-                {car.photo}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {status === 'succeeded' && <CarsList cars={cars} />}
     </div>
   );
 };
