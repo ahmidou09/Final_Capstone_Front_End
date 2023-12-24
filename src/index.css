@@ -54,82 +54,11 @@ body {
   font-weight: 700;
 }
 
-input {
-  height: 40px;
-  width: 300px;
-  border-radius: 5px;
-}
-
-button {
-  cursor: pointer;
-}
-
-h1 {
-  color: #333;
-}
-
 ul {
-  list-style-type: none;
-  padding: 0;
+  list-style: none;
 }
 
 button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
   border: none;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* AddCarItem.css */
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin-top: 20px;
-}
-
-label {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-input {
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-link {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-}
-
-link:hover {
-  color: #007bff;
-}
-
-button {
-  background-color: var(--color-primary);
-  color: #fff;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-}
-
-button:hover {
-  background-color: #0056b3;
+  padding: 1rem 2rem;
 }
