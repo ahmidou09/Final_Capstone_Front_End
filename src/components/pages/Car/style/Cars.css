@@ -68,11 +68,6 @@
   padding: 0.5rem 1rem;
 }
 
-.custom-left-arrow:hover,
-.custom-right-arrow:hover {
-  background-color: var(--color-primary);
-}
-
 .custom-left-arrow {
   border-radius: 0 100px 100px 0;
   left: 0;
@@ -81,4 +76,9 @@
 .custom-right-arrow {
   border-radius: 100px 0 0 100px;
   right: 0;
+}
+
+.custom-left-arrow:hover,
+.custom-right-arrow:hover {
+  background-color: var(--color-primary);
 }
