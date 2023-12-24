@@ -8,12 +8,6 @@
   margin: 20px auto;
 }
 
-input {
-  height: 40px;
-  width: 300px;
-  border-radius: 5px;
-}
-
 .toggleLogin {
   display: inline-block;
   position: relative;
@@ -26,8 +20,4 @@ input {
   color: white;
   border: none;
   border-radius: 5px;
-}
-
-button {
-  cursor: pointer;
 }

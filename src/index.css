@@ -1,7 +1,45 @@
-* {
-  margin: 0;
+@import url("https://fonts.cdnfonts.com/css/cocogoose");
+
+/* variable */
+:root {
+  --color-primary: #97bf0f;
+  --color-grey-light: #d3d3d3;
+  --color-grey-light-2: #e2e3e5;
+  --color-grey-dark: #030303;
+  --color-grey-dark-2: #8b8b8b;
+  --color-white: #fff;
+  --font-cocogoose: "COCOGOOSE", sans-serif;
+  --shadow-dark: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --shadow-light: 0 0.5rem 15rem rgba(0, 0, 0, 0.2);
+  --transition: all 0.2s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+}
+
+/* base */
+
+*,
+*::after,
+*::before {
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.container {
+  display: flex;
+  align-items: start;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
 }
 
 .loading {
@@ -14,4 +52,84 @@
   color: white;
   font-size: 50px;
   font-weight: 700;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* AddCarItem.css */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-top: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input {
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+link:hover {
+  color: #007bff;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
