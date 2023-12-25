@@ -1,5 +1,5 @@
 .addCarContainer {
-  max-width: 400px;
+  max-width: 40rem;
   margin: 0 auto;
 }
 
@@ -9,21 +9,25 @@
 }
 
 .addCarForm label {
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.6rem;
 }
 
 .addCarForm input,
 .addCarForm textarea {
   width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  margin-bottom: 12px;
+  padding: 0.8rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .addCarForm button {
   background-color: var(--color-primary);
   color: white;
-  padding: 10px 15px;
+  padding: 1rem 1.5rem;
   border: none;
   cursor: pointer;
 }

@@ -45,7 +45,9 @@ const AddCarItem = () => {
 
   return (
     <div className="addCarContainer">
-      <h1>Add Car Item</h1>
+      <header>
+        <h1>Add Car Item</h1>
+      </header>
       <form onSubmit={handleSubmit} className="addCarForm">
         <label htmlFor="name">
           Name:

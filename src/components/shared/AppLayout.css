@@ -6,23 +6,25 @@
   border-right: 1px solid var(--color-grey-light-2);
   height: 100vh;
   padding-left: 1rem;
+  font-size: 1.6rem;
 }
 
 .logo-container {
-  padding: 1rem;
+  padding: 2rem;
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .logo {
-  width: 6rem;
+  width: 10rem;
 }
 
 .navigation-item {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .navigation-list {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .navigation-item a {
@@ -52,6 +54,7 @@
   display: flex;
   margin-top: auto;
   margin-bottom: 0;
+  justify-content: center;
 }
 
 .social-media-icons li {
@@ -59,11 +62,12 @@
 }
 
 .social-media-icons li svg {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
 }
 
 .copyright p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
   padding: 1rem;
+  letter-spacing: 2px;
 }

@@ -26,6 +26,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -50,7 +54,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 50px;
+  font-size: 5rem;
   font-weight: 700;
 }
 
@@ -61,4 +65,23 @@ ul {
 button {
   border: none;
   padding: 1rem 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+header {
+  padding: 3rem;
 }
