@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
 import { addCar, fetchCars } from '../../../redux/cars/carsSlice';
+import 'react-toastify/dist/ReactToastify.css';
 import './style/AddCarItem.css';
 
 const AddCarItem = () => {
@@ -10,8 +12,9 @@ const AddCarItem = () => {
     try {
       await dispatch(addCar(carData));
       dispatch(fetchCars());
+      toast.success('Car added successfully!');
     } catch (error) {
-      throw new Error('Error adding car:', error);
+      toast.error(`Error adding car: ${error.message}`);
     }
   };
 
@@ -45,6 +48,7 @@ const AddCarItem = () => {
 
   return (
     <div className="addCarContainer">
+      <ToastContainer />
       <header>
         <h1>Add Car Item</h1>
       </header>

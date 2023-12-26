@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import LoadingComponent from '../../shared/LoadingComponent';
 import CarsList from './CarsList';
 import {
   fetchCars,
@@ -18,7 +19,7 @@ const Cars = () => {
 
   return (
     <div className="cars-container">
-      {status === 'loading' && <p>Loading...</p>}
+      {status === 'loading' && <LoadingComponent />}
       {status === 'failed' && <p>Error loading cars.</p>}
       {status === 'succeeded' && <CarsList cars={cars} />}
     </div>

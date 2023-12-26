@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './style/DeleteCarItem.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -7,6 +9,7 @@ import {
   selectCars,
   selectCarsStatus,
 } from '../../../redux/cars/carsSlice';
+import LoadingComponent from '../../shared/LoadingComponent';
 
 const DeleteCarItem = () => {
   const dispatch = useDispatch();
@@ -20,8 +23,13 @@ const DeleteCarItem = () => {
   }, [dispatch, currentPage, pageSize]);
 
   const handleDeleteCar = async (id) => {
-    await dispatch(deleteCar(id));
-    dispatch(fetchCars({ page: currentPage, pageSize }));
+    try {
+      await dispatch(deleteCar(id));
+      dispatch(fetchCars({ page: currentPage, pageSize }));
+      toast.success('Car deleted successfully!');
+    } catch (error) {
+      toast.error(`Error deleting car: ${error.message}`);
+    }
   };
 
   const handlePageChange = (newPage) => {
@@ -34,10 +42,11 @@ const DeleteCarItem = () => {
 
   return (
     <div className="deleteCarContainer">
+      <ToastContainer />
       <header>
         <h1>List of Cars</h1>
       </header>
-      {status === 'loading' && <p>Loading...</p>}
+      {status === 'loading' && <LoadingComponent />}
       {status === 'failed' && <p>Error loading cars.</p>}
       {status === 'succeeded' && (
         <div>

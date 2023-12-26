@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Registrations from './Registrations';
 import './Sessions.css';
+import LoadingComponent from '../../shared/LoadingComponent';
 
 const LandingPage = () => {
   const [isLogin, setLogin] = useState(true);
@@ -11,7 +12,7 @@ const LandingPage = () => {
   const history = useNavigate();
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <LoadingComponent />;
   }
 
   const toggleLogin = () => {
