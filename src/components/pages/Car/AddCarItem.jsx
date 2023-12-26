@@ -11,7 +11,7 @@ const AddCarItem = () => {
       await dispatch(addCar(carData));
       dispatch(fetchCars());
     } catch (error) {
-      throw Error('Error adding car:', error);
+      throw new Error('Error adding car:', error);
     }
   };
 
@@ -64,23 +64,17 @@ const AddCarItem = () => {
             onChange={() => setFormData((pre) => ({ ...pre, availability: !pre.availability }))}
           />
         </label>
-        <label htmlFor="Photo">
+        <label htmlFor="photo">
           Photo:
           <input type="text" name="photo" value={formData.photo} onChange={handleChange} required />
         </label>
-        <label htmlFor="Cost">
+        <label htmlFor="cost">
           Cost:
           <input type="number" name="cost" value={formData.cost} onChange={handleChange} required />
         </label>
         <label htmlFor="description">
-          description:
-          <textarea
-            id="description"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-          />
+          Description:
+          <textarea name="description" value={formData.description} onChange={handleChange} />
         </label>
         <button type="submit">Add Car</button>
       </form>
