@@ -57,8 +57,9 @@ const CarsList = ({ cars }) => (
                 </span>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  {car.description.length > 100
+                    ? `${car.description.substring(0, 100)}...`
+                    : car.description}
                 </p>
               </div>
             </div>

@@ -30,6 +30,7 @@
   border: 1px solid var(--color-grey-light);
   border-radius: 1rem;
   box-shadow: var(--shadow-dark);
+  min-height: 43rem;
 }
 
 .link-to-detail,
