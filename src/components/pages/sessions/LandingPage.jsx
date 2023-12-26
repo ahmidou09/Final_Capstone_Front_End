@@ -3,33 +3,30 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Registrations from './Registrations';
+import './Sessions.css';
 
 const LandingPage = () => {
-  const [login, setLogin] = useState(true);
+  const [isLogin, setLogin] = useState(true);
   const { loading } = useSelector((state) => state.user);
   const history = useNavigate();
 
   if (loading) {
-    return (<h1 className="loading">{loading ? 'Loading...' : ''}</h1>);
+    return <h1>Loading...</h1>;
   }
+
+  const toggleLogin = () => {
+    setLogin(!isLogin);
+    const destination = isLogin ? '/register' : '/login';
+    history(destination);
+  };
+
   return (
-    <>
-      {login ? <Login /> : <Registrations />}
-      <button
-        type="button"
-        className="toggleLogin"
-        onClick={() => {
-          setLogin(!login);
-          if (login) {
-            history('/register');
-          } else {
-            history('/login');
-          }
-        }}
-      >
-        {login ? 'Register' : 'Login'}
+    <div className="sessions-container">
+      {isLogin ? <Login /> : <Registrations />}
+      <button type="button" onClick={toggleLogin}>
+        {isLogin ? 'Register' : 'Login'}
       </button>
-    </>
+    </div>
   );
 };
 
