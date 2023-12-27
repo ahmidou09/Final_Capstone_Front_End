@@ -20,6 +20,15 @@
   box-sizing: border-box;
 }
 
+.login-button {
+  margin-top: 1rem;
+  background-color: transparent !important;
+  color: black !important;
+  text-align: start;
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+
 .sessions-container button {
   width: 100%;
   padding: 1rem;

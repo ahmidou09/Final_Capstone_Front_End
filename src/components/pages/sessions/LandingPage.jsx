@@ -24,8 +24,8 @@ const LandingPage = () => {
   return (
     <div className="sessions-container">
       {isLogin ? <Login /> : <Registrations />}
-      <button type="button" onClick={toggleLogin}>
-        {isLogin ? 'Register' : 'Login'}
+      <button type="button" onClick={toggleLogin} className="login-button">
+        {isLogin ? 'Don\'t have an account? Register' : 'Already have an account? Login'}
       </button>
     </div>
   );
