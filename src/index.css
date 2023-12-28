@@ -1,7 +1,49 @@
-* {
-  margin: 0;
+@import url("https://fonts.cdnfonts.com/css/cocogoose");
+
+/* variable */
+:root {
+  --color-primary: #97bf0f;
+  --color-grey-light: #d3d3d3;
+  --color-grey-light-2: #e2e3e5;
+  --color-grey-dark: #030303;
+  --color-grey-dark-2: #8b8b8b;
+  --color-white: #fff;
+  --font-cocogoose: "COCOGOOSE", sans-serif;
+  --shadow-dark: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --shadow-light: 0 0.5rem 15rem rgba(0, 0, 0, 0.2);
+  --transition: all 0.2s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+}
+
+/* base */
+
+*,
+*::after,
+*::before {
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.container {
+  display: flex;
+  align-items: start;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
 }
 
 .loading {
@@ -12,6 +54,34 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 50px;
+  font-size: 5rem;
   font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  padding: 1rem 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+header {
+  padding: 3rem;
 }

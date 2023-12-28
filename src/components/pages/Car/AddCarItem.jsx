@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
 import { addCar, fetchCars } from '../../../redux/cars/carsSlice';
+import 'react-toastify/dist/ReactToastify.css';
+import './style/AddCarItem.css';
 
 const AddCarItem = () => {
   const dispatch = useDispatch();
@@ -9,8 +12,9 @@ const AddCarItem = () => {
     try {
       await dispatch(addCar(carData));
       dispatch(fetchCars());
+      toast.success('Car added successfully!');
     } catch (error) {
-      console.error('Error adding car:', error);
+      toast.error(`Error adding car: ${error.message}`);
     }
   };
 
@@ -19,12 +23,13 @@ const AddCarItem = () => {
     availability: false,
     photo: '',
     cost: 0,
+    description: '',
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((pre) => ({
-      ...pre,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
   };
@@ -37,13 +42,17 @@ const AddCarItem = () => {
       availability: false,
       photo: '',
       cost: 0,
+      description: '',
     });
   };
 
   return (
-    <div>
-      <h1>Add Car Item</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="addCarContainer">
+      <ToastContainer />
+      <header>
+        <h1>Add Car Item</h1>
+      </header>
+      <form onSubmit={handleSubmit} className="addCarForm">
         <label htmlFor="name">
           Name:
           <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
@@ -59,13 +68,17 @@ const AddCarItem = () => {
             onChange={() => setFormData((pre) => ({ ...pre, availability: !pre.availability }))}
           />
         </label>
-        <label htmlFor="Photo">
+        <label htmlFor="photo">
           Photo:
           <input type="text" name="photo" value={formData.photo} onChange={handleChange} required />
         </label>
-        <label htmlFor="Cost">
+        <label htmlFor="cost">
           Cost:
           <input type="number" name="cost" value={formData.cost} onChange={handleChange} required />
+        </label>
+        <label htmlFor="description">
+          Description:
+          <textarea name="description" value={formData.description} onChange={handleChange} />
         </label>
         <button type="submit">Add Car</button>
       </form>
