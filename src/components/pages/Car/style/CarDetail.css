@@ -2,45 +2,55 @@
 .car-img img {
   width: 70%;
 }
-.text{
+
+.text {
   text-align: center;
 }
+
 /* div{
   border: 1px solid black;
 } */
 
-.flex{
+.flex {
   display: flex;
   justify-content: center;
 }
-.text-div{
-  width:40%
+
+.text-div {
+  width: 40%;
 }
-.divider{
+
+.divider {
   margin: 100px 0;
 }
+
 .margin {
   margin: 20px;
 }
+
 .link-to-reserve,
 .link-to-reserve:visited {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
 }
-.bckgrnd{
+
+.bckgrnd {
   background-color: #88aa1a;
   border: 1px solid #88aa1a;
   border-radius: 17px;
 }
-.auto-margin{
+
+.auto-margin {
   margin: 200px auto;
   padding: 2px;
-  font-size: medium
+  font-size: medium;
 }
-.grey{
+
+.grey {
   background-color: #bfc2c05b;
   border: 1px solid #bfc2c05b;
 }
-.pad{
+
+.pad {
   padding: 5px;
 }

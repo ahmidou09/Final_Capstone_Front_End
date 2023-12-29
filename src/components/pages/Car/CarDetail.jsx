@@ -18,35 +18,38 @@ const CarDetail = () => {
   }
 
   return (
-    <div className='flex divider'>
-      
+    <div className="flex divider">
+
       <div className="car-img flex">
-      <img src={car.photo} alt={car.name} />
+        <img src={car.photo} alt={car.name} />
       </div>
-      <div className='text-div margin'>
-        <h3 className='text'>
-        {car.name}
+      <div className="text-div margin">
+        <h3 className="text">
+          {car.name}
         </h3>
-        <h4 className='text'>-$350 deposit on any purchase</h4>
+        <h4 className="text">-$350 deposit on any purchase</h4>
 
         <div>
-          <p className='text'>{car.description}</p>
+          <p className="text">{car.description}</p>
         </div>
         <div>
-        <p className='text grey pad margin
-        '>
-         Cost per day:
-                  $
-          {car.cost}
+          <p className="text grey pad margin
+        "
+          >
+            Cost per day:
+            $
+            {car.cost}
           </p>
         </div>
 
         <div className="text-div auto-margin bckgrnd text">
-          <Link to={`/reserve-form`} key={car.id} className="link-to-reserve text-div"> Rent
+          <Link to="/reserve-form" key={car.id} className="link-to-reserve text-div">
+            {' '}
+            Rent
           </Link>
         </div>
       </div>
-     
+
     </div>
   );
 };
