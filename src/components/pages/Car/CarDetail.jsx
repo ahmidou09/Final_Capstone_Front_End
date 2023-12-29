@@ -1,10 +1,8 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { selectCarDetails } from '../../../redux/cars/carsSlice';
-
-import CustomArrow from '../../shared/CustomArrow';
 import './style/CarDetail.css';
 
 const CarDetail = () => {
@@ -20,21 +18,32 @@ const CarDetail = () => {
   }
 
   return (
-    <div className='divider'>
-      <div className="car-img margin">
+    <div className='flex divider'>
+      
+      <div className="car-img flex">
       <img src={car.photo} alt={car.name} />
       </div>
-      <div>
-        <h3>
+      <div className='text-div margin'>
+        <h3 className='text'>
         {car.name}
         </h3>
-        <p>-$350 deposit on any purchase</p>
+        <h4 className='text'>-$350 deposit on any purchase</h4>
 
         <div>
-          {car.description}
+          <p className='text'>{car.description}</p>
         </div>
         <div>
-          {car.price}
+        <p className='text grey pad margin
+        '>
+         Cost per day:
+                  $
+          {car.cost}
+          </p>
+        </div>
+
+        <div className="text-div auto-margin bckgrnd text">
+          <Link to={`/reserve-form`} key={car.id} className="link-to-reserve text-div"> Rent
+          </Link>
         </div>
       </div>
      
