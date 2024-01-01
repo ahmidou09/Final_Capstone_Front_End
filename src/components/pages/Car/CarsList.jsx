@@ -57,7 +57,9 @@ const CarsList = ({ cars }) => (
                 </span>
 
                 <p>
-                  {car.description}
+                  {car.description.length > 100
+                    ? `${car.description.substring(0, 100)}...`
+                    : car.description}
                 </p>
               </div>
             </div>

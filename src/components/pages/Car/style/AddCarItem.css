@@ -1,4 +1,4 @@
-.addCarContainer {
+.add-car-container {
   max-width: 40rem;
   margin: 0 auto;
 }
@@ -34,4 +34,15 @@
 
 .addCarForm button:hover {
   background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  .add-car-container {
+    padding: 3rem;
+  }
+
+  .addCarForm label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

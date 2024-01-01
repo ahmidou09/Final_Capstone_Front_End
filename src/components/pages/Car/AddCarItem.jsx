@@ -47,7 +47,7 @@ const AddCarItem = () => {
   };
 
   return (
-    <div className="addCarContainer">
+    <div className="add-car-container">
       <ToastContainer />
       <header>
         <h1>Add Car Item</h1>

@@ -1,56 +1,100 @@
-
-.car-img img {
-  width: 70%;
+.car-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-.text {
+.car-details {
+  padding: 2rem;
+}
+
+.car-name-details {
+  color: var(--color-grey-dark);
+}
+
+.car-image-table-container {
+  display: flex;
+  align-items: center;
+}
+
+.car-image-container {
+  flex: 0 0 40%;
+  margin-right: 2rem;
+}
+
+.car-image-details {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.car-details-container-table {
+  flex: 1;
+}
+
+.car-details-table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.car-details-table th,
+.car-details-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-grey-light);
+  text-align: left;
+}
+
+.car-details-table tr:nth-child(2n + 1) {
+  background-color: var(--color-grey-light);
+}
+
+.car-description {
+  margin-top: 2rem;
   text-align: center;
 }
 
-/* div{
-  border: 1px solid black;
-} */
+.car-description p {
+  font-size: 1.6rem;
+}
 
-.flex {
+.reserve-button-container {
+  margin-top: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-.text-div {
-  width: 40%;
-}
-
-.divider {
-  margin: 100px 0;
-}
-
-.margin {
-  margin: 20px;
-}
-
-.link-to-reserve,
-.link-to-reserve:visited {
+.reserve-link {
   text-decoration: none;
+}
+
+.reserve-btn {
+  background-color: var(--color-primary);
   color: #fff;
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.bckgrnd {
-  background-color: #88aa1a;
-  border: 1px solid #88aa1a;
-  border-radius: 17px;
+.reserve-btn:hover {
+  background-color: #0069d9;
 }
 
-.auto-margin {
-  margin: 200px auto;
-  padding: 2px;
-  font-size: medium;
-}
+@media screen and (max-width: 768px) {
+  .car-image-table-container {
+    flex-direction: column;
+  }
 
-.grey {
-  background-color: #bfc2c05b;
-  border: 1px solid #bfc2c05b;
-}
+  .car-details-container-table {
+    margin-left: 0;
+  }
 
-.pad {
-  padding: 5px;
+  .reserve-btn {
+    padding: 1rem 5rem;
+  }
 }
