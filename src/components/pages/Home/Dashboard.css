@@ -1,3 +1,15 @@
 .home-page-container {
   padding: 4rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .home-page-container {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-page-container {
+    padding: 0;
+  }
+}

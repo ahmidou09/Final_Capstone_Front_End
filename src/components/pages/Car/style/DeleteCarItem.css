@@ -54,3 +54,13 @@
   justify-content: center;
   gap: 4rem;
 }
+
+@media screen and (max-width: 400px) {
+  .carItem {
+    flex-direction: column;
+    align-items: normal;
+    margin-bottom: 0;
+    padding: 1rem;
+    gap: 2rem;
+  }
+}

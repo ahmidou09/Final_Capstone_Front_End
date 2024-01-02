@@ -18,34 +18,45 @@ const CarDetail = () => {
   }
 
   return (
-    <div className="flex divider">
-
-      <div className="car-img flex">
-        <img src={car.photo} alt={car.name} />
-      </div>
-      <div className="text-div margin">
-        <h3 className="text">
-          {car.name}
-        </h3>
-        <h4 className="text">-$350 deposit on any purchase</h4>
-
-        <div>
-          <p className="text">{car.description}</p>
+    <div className="car-details-container">
+      <div className="car-details">
+        <h1>{car.name}</h1>
+        <div className="car-image-table-container">
+          <div className="car-image-container">
+            <img
+              src={car.photo}
+              alt={car.name}
+              className="car-image-details"
+            />
+          </div>
+          <div className="car-details-container-table">
+            <table className="car-details-table">
+              <tbody>
+                <tr>
+                  <th>Type</th>
+                  <td>SUV</td>
+                </tr>
+                <tr>
+                  <th>Daily Rate</th>
+                  <td>{car.cost}</td>
+                </tr>
+                <tr>
+                  <th>Location</th>
+                  <td>Paris</td>
+                </tr>
+              </tbody>
+            </table>
+            <div className="car-description">
+              <h3 className="car-name-details">Description</h3>
+              <p>{car.description}</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <p className="text grey pad margin
-        "
-          >
-            Cost per day:
-            $
-            {car.cost}
-          </p>
-        </div>
-
-        <div className="text-div auto-margin bckgrnd text">
-          <Link to="/reserve-form" key={car.id} className="link-to-reserve text-div">
-            {' '}
-            Rent
+        <div className="reserve-button-container">
+          <Link className="reserve-link" to="/reserve-form">
+            <button type="button" className="reserve-btn">
+              Rent
+            </button>
           </Link>
         </div>
       </div>

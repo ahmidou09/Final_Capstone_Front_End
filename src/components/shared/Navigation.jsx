@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FaTwitter, FaFacebookF } from 'react-icons/fa6';
@@ -7,14 +8,14 @@ import { FaPinterestP } from 'react-icons/fa';
 import { logout } from '../../redux/user/userSlice';
 import logo from '../../assets/logo.png';
 
-const Navigation = () => {
+const Navigation = ({ isNavigationOpen }) => {
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
   };
 
   return (
-    <nav className="navigation">
+    <nav className={`navigation ${isNavigationOpen ? 'navigation-open' : ''}`}>
 
       <div className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
@@ -50,6 +51,10 @@ const Navigation = () => {
       <div className="copyright"><p>&copy; 2023 cruise fleet</p></div>
     </nav>
   );
+};
+
+Navigation.propTypes = {
+  isNavigationOpen: PropTypes.bool.isRequired,
 };
 
 export default Navigation;
