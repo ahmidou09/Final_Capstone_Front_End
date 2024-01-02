@@ -43,7 +43,7 @@ const App = () => {
         <Route path="/delete-car-item" element={<DeleteCarItem />} />
 
         <Route path="/items" element={<Outlet />}>
-          <Route path=":id" element={<CarDetail />} />
+          <Route path=":carId" element={<CarDetail />} />
         </Route>
       </Route>
     </Routes>

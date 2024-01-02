@@ -1,0 +1,56 @@
+
+.car-img img {
+  width: 70%;
+}
+
+.text {
+  text-align: center;
+}
+
+/* div{
+  border: 1px solid black;
+} */
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.text-div {
+  width: 40%;
+}
+
+.divider {
+  margin: 100px 0;
+}
+
+.margin {
+  margin: 20px;
+}
+
+.link-to-reserve,
+.link-to-reserve:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.bckgrnd {
+  background-color: #88aa1a;
+  border: 1px solid #88aa1a;
+  border-radius: 17px;
+}
+
+.auto-margin {
+  margin: 200px auto;
+  padding: 2px;
+  font-size: medium;
+}
+
+.grey {
+  background-color: #bfc2c05b;
+  border: 1px solid #bfc2c05b;
+}
+
+.pad {
+  padding: 5px;
+}

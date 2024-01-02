@@ -87,5 +87,5 @@ export const carsSlice = createSlice({
 
 export const selectCars = (state) => state.cars.items;
 export const selectCarsStatus = (state) => state.cars.status;
-
+export const selectCarDetails = (state, carId) => state.cars.items.find((car) => car.id === carId);
 export default carsSlice.reducer;
