@@ -15,7 +15,7 @@ const ReserveForm = () => {
   const { items } = useSelector((state) => state.cars);
   const { images } = useSelector((state) => state.cars);
   const { user } = useSelector(state => state.user);
-  const [itemId, setItemId] = useState();
+  const [itemId, setItemId] = useState(null);
 
   const city = useRef();
   const start = useRef();
@@ -78,7 +78,7 @@ const ReserveForm = () => {
           <label for="FinishTime">Finish (date and time):</label>
           <input type="datetime-local" id="finish" ref={finish} required className='date' name="finish" />
         </div>
-        <input type="text" name='city' id='city' ref={city} className='city' placeholder='City' />
+        <input type="text" name='city' required id='city' ref={city} className='city' placeholder='City' />
         <button type="submit" className='reserve'>Reserve</button>
       </form>
     </>

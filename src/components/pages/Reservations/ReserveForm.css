@@ -1,7 +1,7 @@
 .select {
   text-align: start;
   padding-left: 40px;
-  margin: 20px 0px 15px 0px;
+  margin: 20px 0 15px 0;
 }
 
 .cars {
@@ -9,8 +9,8 @@
 }
 
 .car-item {
-    margin-right: -5px;
-    cursor: pointer;
+  margin-right: -5px;
+  cursor: pointer;
 }
 
 .dates {
@@ -22,8 +22,8 @@
 }
 
 .date {
-    margin-left: -120px;
-    font-size: 16px;
+  margin-left: -120px;
+  font-size: 16px;
 }
 
 .city {
@@ -36,13 +36,13 @@
 }
 
 .reserve {
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    background-color: dodgerblue;
-    border-radius: 10px;
-    margin: 0 40% 0 40%;
-    width: 200px;
-    height: 50px;
-    margin-bottom: 100px;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  margin: 0 40% 0 40%;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 100px;
 }

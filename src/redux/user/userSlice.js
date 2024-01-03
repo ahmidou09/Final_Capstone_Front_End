@@ -79,7 +79,7 @@ const userSlice = createSlice({
 
       .addCase(checkLogin.fulfilled, (state, action) => {
         state.loggedIn = action.payload.logged_in;
-        state.user =  action.payload.user
+        state.user = action.payload.user;
         state.loading = false;
       })
 
