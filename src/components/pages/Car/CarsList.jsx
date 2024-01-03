@@ -18,7 +18,7 @@ const carPropTypes = PropTypes.shape({
   photo: PropTypes.string.isRequired,
   cost: PropTypes.number.isRequired,
   availability: PropTypes.bool.isRequired,
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  images: PropTypes.string.isRequired,
 });
 
 const CarsList = ({ cars, images }) => (
