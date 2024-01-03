@@ -10,11 +10,11 @@ const ReserveForm = () => {
 
   useEffect(() => {
     dispatch(fetchCars());
-  }, []);
+  }, [dispatch]);
 
   const { items } = useSelector((state) => state.cars);
   const { images } = useSelector((state) => state.cars);
-  const { user } = useSelector(state => state.user);
+  const { user } = useSelector((state) => state.user);
   const [itemId, setItemId] = useState(null);
 
   const city = useRef();
@@ -23,20 +23,19 @@ const ReserveForm = () => {
 
   const selectCar = (e) => {
     e.target.style.border = '3px solid #bcbcbc';
-    setItemId( parseInt( e.target.getAttribute('data-id') ) )
+    setItemId(parseInt(e.target.getAttribute('data-id')));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(city.current.value)
     dispatch(reserve({
-        user_id: user.id,
-        item_id: itemId,
-        start: start.current.value,
-        finish: finish.current.value,
-        city: city.current.value,
-      }))
-  }
+      user_id: user.id,
+      item_id: itemId,
+      start: start.current.value,
+      finish: finish.current.value,
+      city: city.current.value,
+    }));
+  };
 
   return (
     <>
@@ -73,13 +72,13 @@ const ReserveForm = () => {
 
         </div>
         <div className='dates'>
-          <label for="startTime">Start (date and time):</label>
-          <input type="datetime-local" id="start" required ref={start} className='date' name="start" />
-          <label for="FinishTime">Finish (date and time):</label>
-          <input type="datetime-local" id="finish" ref={finish} required className='date' name="finish" />
+          <label htmlFor="startTime">Start (date and time):</label>
+          <input type="datetime-local" id="start" required ref={start} className="date" name="start" />
+          <label htmlFor="FinishTime">Finish (date and time):</label>
+          <input type="datetime-local" id="finish" ref={finish} required className= "date" name="finish" />
         </div>
-        <input type="text" name='city' required id='city' ref={city} className='city' placeholder='City' />
-        <button type="submit" className='reserve'>Reserve</button>
+        <input type="text" name="city" required id="city" ref={city} className="city" placeholder='City' />
+        <button type="submit" className="reserve">Reserve</button>
       </form>
     </>
   );
