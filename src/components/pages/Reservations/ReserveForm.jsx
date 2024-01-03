@@ -23,7 +23,7 @@ const ReserveForm = () => {
 
   const selectCar = (e) => {
     e.target.style.border = '3px solid #bcbcbc';
-    setItemId(parseInt(e.target.getAttribute('data-id')));
+    setItemId(parseInt(e.target.getAttribute('data-id'), 10));
   };
 
   const handleSubmit = (e) => {
@@ -47,7 +47,7 @@ const ReserveForm = () => {
             <>
               {car.availability
             && (
-            <div className="car-item" onClick={selectCar} data-id={car.id} style={{ width: 330 }}>
+            <div className="car-item" onKeyDown={selectCar} onClick={selectCar} data-id={car.id} style={{ width: 330 }}>
               <div className="car-image">
                 <img src={images[index]} alt={car.name} data-id={car.id} />
               </div>
