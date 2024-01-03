@@ -47,7 +47,7 @@ const ReserveForm = () => {
             <>
               {car.availability
             && (
-            <div className="car-item"  role="button" onKeyDown={selectCar} onClick={selectCar} data-id={car.id} style={{ width: 330 }}>
+            <div className="car-item" tabIndex={0} role="button" onKeyDown={selectCar} onClick={selectCar} data-id={car.id} style={{ width: 330 }}>
               <div className="car-image">
                 <img src={images[index]} alt={car.name} data-id={car.id} />
               </div>
