@@ -72,10 +72,12 @@ const ReserveForm = () => {
 
         </div>
         <div className="dates">
-          <label htmlFor="startTime">Start (date and time):</label>
-          <input type="datetime-local" id="startTime" required ref={start} className="date" name="startTime" />
-          <label htmlFor="startTime">Finish (date and time):</label>
-          <input type="datetime-local" id="FinishTime" ref={finish} required className="date" name="FinishTime" />
+          <label htmlFor="startTime">Start (date and time):
+            <input type="datetime-local" id="startTime" required ref={start} className="date" name="startTime" />
+          </label>
+          <label htmlFor="startTime">Finish (date and time):
+            <input type="datetime-local" id="FinishTime" ref={finish} required className="date" name="FinishTime" />
+          </label>
         </div>
         <input type="text" name="city" required id="city" ref={city} className="city" placeholder="City" />
         <button type="submit" className="reserve">Reserve</button>
