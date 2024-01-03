@@ -20,7 +20,7 @@ const carPropTypes = PropTypes.shape({
   availability: PropTypes.bool.isRequired,
 });
 
-const CarsList = ({ cars }) => (
+const CarsList = ({ cars, images }) => (
 
   <div className="car-slider">
     <ul className="car-list">
@@ -30,11 +30,12 @@ const CarsList = ({ cars }) => (
         customLeftArrow={<CustomArrow direction="left" />}
         infinite
       >
-        {cars.map((car) => (
+        {cars.map((car, index) => (
+
           <Link to={`/items/${car.id}`} key={car.id} className="link-to-detail">
             <div className="car-item">
               <div className="car-image">
-                <img src={car.photo} alt={car.name} />
+                <img src={images[index]} alt={car.name} />
               </div>
               <div className="car-details">
                 <h3 className="car-model">{car.name}</h3>
