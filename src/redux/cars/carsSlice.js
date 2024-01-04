@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const initialState = {
   items: [],
-  images: [],
   status: 'idle',
   error: null,
 };
@@ -20,7 +19,7 @@ export const fetchCars = createAsyncThunk('cars/fetchCars',
           },
         },
       );
-      const data = await response.data.result;
+      const data = await response.data.result.items;
       return data;
     } catch (error) {
       throw new Error(error);
@@ -71,8 +70,7 @@ export const carsSlice = createSlice({
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.images = action.payload.item_image_urls;
-        state.items = action.payload.items;
+        state.items = action.payload;
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.status = 'failed';
@@ -88,7 +86,6 @@ export const carsSlice = createSlice({
 });
 
 export const selectCars = (state) => state.cars.items;
-export const selectImages = (state) => state.cars.images;
 export const selectCarsStatus = (state) => state.cars.status;
 export const selectCarDetails = (state, carId) => state.cars.items.find((car) => car.id === carId);
 export default carsSlice.reducer;
