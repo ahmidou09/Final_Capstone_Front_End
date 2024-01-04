@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Routes, Route, useNavigate, Outlet,
+  Routes, Route, useNavigate,
 } from 'react-router-dom';
 import { checkLogin } from './redux/user/userSlice';
 import Dashboard from './components/pages/Home/Dashboard';
@@ -37,14 +37,11 @@ const App = () => {
 
       <Route element={<AppLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/reserve-form" element={<ReserveForm />} />
+        <Route path="/reserve-form/:carId" element={<ReserveForm />} />
         <Route path="/my-reservations" element={<MyReservations />} />
         <Route path="/add-car-item" element={<AddCarItem />} />
         <Route path="/delete-car-item" element={<DeleteCarItem />} />
-
-        <Route path="/items" element={<Outlet />}>
-          <Route path=":carId" element={<CarDetail />} />
-        </Route>
+        <Route path="/items/:carId" element={<CarDetail />} />
       </Route>
     </Routes>
   );
