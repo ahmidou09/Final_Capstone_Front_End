@@ -1,90 +1,160 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchCars } from '../../../redux/cars/carsSlice';
-import 'react-multi-carousel/lib/styles.css';
-import { reserve } from '../../../redux/reservations/reservationsSlice';
-import './ReserveForm.css';
+import React, { useState, useEffect } from 'react';
+import './style/ReserveForm.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useParams } from 'react-router-dom';
+import { createReserve, getReservations } from '../../../redux/reservations/reservationsSlice';
+import { currentUser } from '../../../redux/user/userSlice';
+import { selectCarsStatus } from '../../../redux/cars/carsSlice';
 
 const ReserveForm = () => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => currentUser(state));
+  const cars = useSelector((state) => state.cars.items);
+  const status = useSelector(selectCarsStatus);
+  const { carId } = useParams();
+  const car = status === 'succeeded' && cars.find((car) => car.id === Number(carId));
+
+  const cities = [
+    { name: 'Tokyo', country: 'Japan' },
+    { name: 'Delhi', country: 'India' },
+    { name: 'Shanghai', country: 'China' },
+    { name: 'Sao Paulo', country: 'Brazil' },
+    { name: 'Mexico City', country: 'Mexico' },
+    { name: 'Cairo', country: 'Egypt' },
+    { name: 'Beijing', country: 'China' },
+  ];
+
+  const [formData, setFormData] = useState({
+    start: '',
+    finish: '',
+    city: '',
+    item_id: car.id,
+    user_id: user.id,
+  });
 
   useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
-
-  const { items } = useSelector((state) => state.cars);
-  const { images } = useSelector((state) => state.cars);
-  const { user } = useSelector((state) => state.user);
-  const [itemId, setItemId] = useState(null);
-
-  const city = useRef();
-  const start = useRef();
-  const finish = useRef();
-
-  const selectCar = (e) => {
-    e.target.style.border = '3px solid #bcbcbc';
-    setItemId(parseInt(e.target.getAttribute('data-id'), 10));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(reserve({
+    setFormData((prev) => ({
+      ...prev,
       user_id: user.id,
-      item_id: itemId,
-      start: start.current.value,
-      finish: finish.current.value,
-      city: city.current.value,
+    }));
+  }, [user.id]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
     }));
   };
 
+  const calcTimeDiff = () => {
+    const startTime = new Date(formData.start).getTime();
+    const finishTime = new Date(formData.finish).getTime();
+    const timeDifference = finishTime - startTime;
+    const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    return Math.abs(daysDifference);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate that finish is greater than start
+    if (new Date(formData.finish) <= new Date(formData.start)) {
+      toast.error('Finish date must be greater than start date.');
+      return;
+    }
+
+    try {
+    // Dispatch the createReserve action
+      await dispatch(createReserve(formData));
+
+      // Clear the form fields
+      setFormData({
+        start: '',
+        finish: '',
+        city: '',
+        item_id: car.id,
+        user_id: user.id,
+      });
+
+      // Fetch and update reservations
+      dispatch(getReservations(user.id));
+
+      // Show success message
+      toast.success('Reservation created successfully!');
+    } catch (error) {
+      toast.error(`Error creating reservation: ${error.message}`);
+    }
+  };
+
   return (
-    <>
-      <h1>ReserveForm</h1>
-      <form className="reserveForm" onSubmit={handleSubmit}>
-        <h2 className="select">Select a car</h2>
-        <div className="cars">
-          {items.map((car, index) => (
-            <>
-              {car.availability
-            && (
-            <div className="car-item" tabIndex={0} role="button" onKeyDown={selectCar} onClick={selectCar} data-id={car.id} style={{ width: 330 }}>
-              <div className="car-image">
-                <img src={images[index]} alt={car.name} data-id={car.id} />
+    status === 'loading' ? (
+      <div>Loading...</div>
+    ) : (
+      <div className="reserve-container">
+        <ToastContainer />
+        <h1>Reserve a Car</h1>
+        <div className="car-details-form-container">
+          <div className="car-details-container">
+            <h3>{car.name}</h3>
+            <img src={car.photo} alt={car.name} className="car-image-details" />
+          </div>
+          <form onSubmit={handleSubmit} className="reserve-form-container">
+            <label htmlFor="start">
+              Start Date:
+              <input type="datetime-local" id="start" name="start" value={formData.start} onChange={handleChange} required />
+            </label>
+
+            <label htmlFor="finish">
+              Finish Date:
+              <input type="datetime-local" id="finish" name="finish" value={formData.finish} onChange={handleChange} required />
+            </label>
+
+            <label htmlFor="city">
+              Select City:
+              <select id="city" name="city" value={formData.city} onChange={handleChange} required>
+                <option value="" disabled>Select City</option>
+                {cities.map((el) => (
+                  <option key={el.name} value={`${el.name} - ${el.country}`}>
+                    {el.name}
+                    {' '}
+                    -
+                    {el.country}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <div className="cost-details">
+              <div>
+                <strong>Total Days (Days):</strong>
+                <span>{Number.isNaN(calcTimeDiff()) ? 0 : calcTimeDiff()}</span>
               </div>
-              <div className="car-details" data-id={car.id}>
-                <h3 className="car-model" data-id={car.id}>{car.name}</h3>
-                ............................................
-                <p data-id={car.id}>
-                  Cost per day:
+
+              <div>
+                <strong>Day Cost:</strong>
+                <span>
                   $
                   {car.cost}
-                </p>
-                <p data-id={car.id}>
-                  {car.description.length > 100
-                    ? `${car.description.substring(0, 100)}...`
-                    : car.description}
-                </p>
+                </span>
+              </div>
+
+              <div>
+                <strong>Total Cost:</strong>
+                <span>
+                  $
+                  {Number.isNaN(calcTimeDiff() * car.cost) ? 0 : calcTimeDiff() * car.cost}
+                </span>
               </div>
             </div>
-            )}
-            </>
-          )) }
 
+            <button type="submit">Reserve Now</button>
+          </form>
         </div>
-        <div className="dates">
-          <label htmlFor="startTime">
-            Start (date and time):
-            <input type="datetime-local" id="startTime" required ref={start} className="date" name="startTime" />
-          </label>
-          <label htmlFor="startTime">
-            Finish (date and time):
-            <input type="datetime-local" id="FinishTime" ref={finish} required className="date" name="FinishTime" />
-          </label>
-        </div>
-        <input type="text" name="city" required id="city" ref={city} className="city" placeholder="City" />
-        <button type="submit" className="reserve">Reserve</button>
-      </form>
-    </>
+
+      </div>
+    )
   );
 };
 
