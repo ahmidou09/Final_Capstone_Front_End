@@ -127,3 +127,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+export const currentUser = (state) => state.user.user;
