@@ -40,10 +40,6 @@ const CarDetail = () => {
                   <th>Daily Rate</th>
                   <td>{car.cost}</td>
                 </tr>
-                <tr>
-                  <th>Location</th>
-                  <td>Paris</td>
-                </tr>
               </tbody>
             </table>
             <div className="car-description">
@@ -53,7 +49,7 @@ const CarDetail = () => {
           </div>
         </div>
         <div className="reserve-button-container">
-          <Link className="reserve-link" to="/reserve-form">
+          <Link className="reserve-link" to={`/reserve-form/${carId}`}>
             <button type="button" className="reserve-btn">
               Rent
             </button>
