@@ -6,15 +6,12 @@ import {
   fetchCars,
   selectCars,
   selectCarsStatus,
-  selectImages,
-
 } from '../../../redux/cars/carsSlice';
 
 const Cars = () => {
   const dispatch = useDispatch();
   const cars = useSelector(selectCars);
   const status = useSelector(selectCarsStatus);
-  const images = useSelector(selectImages);
 
   useEffect(() => {
     dispatch(fetchCars());
@@ -24,7 +21,7 @@ const Cars = () => {
     <div className="cars-container">
       {status === 'loading' && <LoadingComponent />}
       {status === 'failed' && <p>Error loading cars.</p>}
-      {status === 'succeeded' && <CarsList cars={cars} images={images} />}
+      {status === 'succeeded' && <CarsList cars={cars} />}
     </div>
   );
 };
