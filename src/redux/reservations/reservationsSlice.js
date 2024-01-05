@@ -11,9 +11,10 @@ const initialState = {
   error: null,
 };
 
+
 export const createReserve = createAsyncThunk('reservations/createReserve', async (reservationData) => {
   try {
-    const response = await fetch(`${baseUrl}/users/${reservationData.user_id}/reservations`, {
+    const response = await fetch(`${baseUrl}/reservations`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
