@@ -21,7 +21,6 @@ const MyReservations = () => {
     try {
       await dispatch(deleteReservation({ userId: user.id, reservationId }));
       dispatch(getReservations(user.id));
-      throw new Error('Reservation deleted successfully!');
     } catch (error) {
       throw new Error(error.message);
     }
