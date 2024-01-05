@@ -79,6 +79,7 @@ const userSlice = createSlice({
 
       .addCase(checkLogin.fulfilled, (state, action) => {
         state.loggedIn = action.payload.logged_in;
+        state.user = action.payload.user;
         state.loading = false;
       })
 
@@ -126,3 +127,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+export const currentUser = (state) => state.user.user;
