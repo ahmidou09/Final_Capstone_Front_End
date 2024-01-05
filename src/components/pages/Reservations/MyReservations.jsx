@@ -44,13 +44,16 @@ const MyReservations = () => {
             </tr>
           </thead>
           <tbody>
-            {reservations.map((reservation) => (
-              <tr key={reservation.id}>
-                <td>{formatDate(reservation.start)}</td>
-                <td>{formatDate(reservation.finish)}</td>
-                <td>{reservation.city}</td>
-              </tr>
-            ))}
+            {reservations
+              .filter((reservation) => reservation.user_id === user.id)
+              .map((filteredReservation) => (
+                <tr key={filteredReservation.id}>
+                  <td>{formatDate(filteredReservation.start)}</td>
+                  <td>{formatDate(filteredReservation.finish)}</td>
+                  <td>{filteredReservation.city}</td>
+                </tr>
+              ))}
+
           </tbody>
         </table>
       ) : (

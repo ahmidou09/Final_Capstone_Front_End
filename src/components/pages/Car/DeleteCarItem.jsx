@@ -44,7 +44,7 @@ const DeleteCarItem = () => {
     <div className="deleteCarContainer">
       <ToastContainer />
       <header>
-        <h1>List of Cars</h1>
+        <h2>List of Cars</h2>
       </header>
       {status === 'loading' && <LoadingComponent />}
       {status === 'failed' && <p>Error loading cars.</p>}

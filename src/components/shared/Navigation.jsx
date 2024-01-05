@@ -23,7 +23,7 @@ const Navigation = ({ isNavigationOpen }) => {
 
       <ul className="navigation-list">
         <li className="navigation-item">
-          <NavLink to="/dashboard">Home</NavLink>
+          <NavLink to="/dashboard">Cars</NavLink>
         </li>
         {/* <li className="navigation-item">
           <NavLink to="/reserve-form">Reserve Form</NavLink>

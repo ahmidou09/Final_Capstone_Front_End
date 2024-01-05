@@ -50,7 +50,7 @@ const AddCarItem = () => {
     <div className="add-car-container">
       <ToastContainer />
       <header>
-        <h1>Add Car Item</h1>
+        <h2>Add Car Item</h2>
       </header>
       <form onSubmit={handleSubmit} className="addCarForm">
         <label htmlFor="name">
