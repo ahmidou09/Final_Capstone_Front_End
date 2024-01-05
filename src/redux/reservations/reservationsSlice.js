@@ -11,7 +11,6 @@ const initialState = {
   error: null,
 };
 
-
 export const createReserve = createAsyncThunk('reservations/createReserve', async (reservationData) => {
   try {
     const response = await fetch(`${baseUrl}/reservations`, {
@@ -37,7 +36,6 @@ export const createReserve = createAsyncThunk('reservations/createReserve', asyn
 export const getReservations = createAsyncThunk('reservations/getReservations', async () => {
   try {
     const response = await axios.get('http://localhost:3000/reservations');
-    console.log(response.data);
     return response.data.result;
   } catch (err) {
     return err.message;
