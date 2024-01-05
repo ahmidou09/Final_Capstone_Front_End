@@ -1,9 +1,11 @@
+import './style/MyReservations.css';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservations, selectReservations, selectReservationsStatus } from '../../../redux/reservations/reservationsSlice';
+import {
+  getReservations, selectReservations, selectReservationsStatus, deleteReservation,
+} from '../../../redux/reservations/reservationsSlice';
 import { currentUser } from '../../../redux/user/userSlice';
 import LoadingComponent from '../../shared/LoadingComponent';
-import './style/MyReservations.css';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
@@ -15,13 +17,15 @@ const MyReservations = () => {
     dispatch(getReservations(user.id));
   }, [dispatch, user.id]);
 
-  if (reservationsStatus === 'loading') {
-    return <LoadingComponent />;
-  }
-
-  if (reservationsStatus === 'failed') {
-    return <p>Error loading reservations.</p>;
-  }
+  const handleDeleteReservation = async (reservationId) => {
+    try {
+      await dispatch(deleteReservation({ userId: user.id, reservationId }));
+      dispatch(getReservations(user.id));
+      throw new Error('Reservation deleted successfully!');
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
 
   const formatDate = (dateString) => {
     const options = {
@@ -30,10 +34,17 @@ const MyReservations = () => {
     return new Date(dateString).toLocaleDateString('en-US', options);
   };
 
+  if (reservationsStatus === 'loading') {
+    return <LoadingComponent />;
+  }
+
+  if (reservationsStatus === 'failed') {
+    return <p>Error loading reservations.</p>;
+  }
+
   return (
     <div className="my-reservations-container">
       <h2>My Reservations</h2>
-
       {Array.isArray(reservations) && reservations.length > 0 ? (
         <table className="reservations-table">
           <thead>
@@ -49,14 +60,23 @@ const MyReservations = () => {
           <tbody>
             {reservations
               .filter((reservation) => reservation.user_id === user.id)
-              .map((filteredReservation) => (
-                <tr key={filteredReservation.id}>
-                  <td>{formatDate(filteredReservation.start)}</td>
-                  <td>{formatDate(filteredReservation.finish)}</td>
-                  <td>{filteredReservation.city}</td>
-                  <td>{filteredReservation.day_cost}</td>
-                  <td>{filteredReservation.total_days}</td>
-                  <td>{filteredReservation.total_cost}</td>
+              .map((userReservation) => (
+                <tr key={userReservation.id}>
+                  <td>{formatDate(userReservation.start)}</td>
+                  <td>{formatDate(userReservation.finish)}</td>
+                  <td>{userReservation.city}</td>
+                  <td>{userReservation.day_cost}</td>
+                  <td>{userReservation.total_days}</td>
+                  <td>{userReservation.total_cost}</td>
+                  <td>
+                    <button
+                      type="button"
+                      className="resvation-delete-btn"
+                      onClick={() => handleDeleteReservation(userReservation.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
           </tbody>
