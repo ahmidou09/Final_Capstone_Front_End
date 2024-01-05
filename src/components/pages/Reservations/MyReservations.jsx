@@ -41,6 +41,9 @@ const MyReservations = () => {
               <th>Start Date</th>
               <th>Finish Date</th>
               <th>City</th>
+              <th>Day Cost</th>
+              <th>Total Days</th>
+              <th>Total Cost</th>
             </tr>
           </thead>
           <tbody>
@@ -51,9 +54,11 @@ const MyReservations = () => {
                   <td>{formatDate(filteredReservation.start)}</td>
                   <td>{formatDate(filteredReservation.finish)}</td>
                   <td>{filteredReservation.city}</td>
+                  <td>{filteredReservation.day_cost}</td>
+                  <td>{filteredReservation.total_days}</td>
+                  <td>{filteredReservation.total_cost}</td>
                 </tr>
               ))}
-
           </tbody>
         </table>
       ) : (

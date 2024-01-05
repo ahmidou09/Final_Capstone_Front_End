@@ -16,7 +16,14 @@ export const createReserve = createAsyncThunk('reservations/createReserve', asyn
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({ reservation: reservationData }),
+      body: JSON.stringify({
+        reservation: {
+          ...reservationData,
+          day_cost: reservationData.dayCost,
+          total_days: reservationData.totalDays,
+          total_cost: reservationData.totalCost,
+        },
+      }),
     });
 
     if (!response.ok) {

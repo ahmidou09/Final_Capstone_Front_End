@@ -32,6 +32,9 @@ const ReserveForm = () => {
     city: '',
     item_id: car.id,
     user_id: user.id,
+    dayCost: car.cost,
+    totalDays: 0,
+    totalCost: 0,
   });
 
   useEffect(() => {
@@ -41,20 +44,23 @@ const ReserveForm = () => {
     }));
   }, [user.id]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   const calcTimeDiff = () => {
     const startTime = new Date(formData.start).getTime();
     const finishTime = new Date(formData.finish).getTime();
     const timeDifference = finishTime - startTime;
     const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
     return Math.abs(daysDifference);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+      dayCost: car.cost,
+      totalDays: calcTimeDiff(),
+      totalCost: calcTimeDiff() * car.cost,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -77,6 +83,9 @@ const ReserveForm = () => {
         city: '',
         item_id: car.id,
         user_id: user.id,
+        dayCost: car.cost,
+        totalDays: 0,
+        totalCost: 0,
       });
 
       // Fetch and update reservations
@@ -129,14 +138,14 @@ const ReserveForm = () => {
             <div className="cost-details">
               <div>
                 <strong>Total Days (Days):</strong>
-                <span>{Number.isNaN(calcTimeDiff()) ? 0 : calcTimeDiff()}</span>
+                <span>{Number.isNaN(formData.totalDays) ? 0 : formData.totalDays}</span>
               </div>
 
               <div>
                 <strong>Day Cost:</strong>
                 <span>
                   $
-                  {car.cost}
+                  {formData.dayCost}
                 </span>
               </div>
 
@@ -144,7 +153,7 @@ const ReserveForm = () => {
                 <strong>Total Cost:</strong>
                 <span>
                   $
-                  {Number.isNaN(calcTimeDiff() * car.cost) ? 0 : calcTimeDiff() * car.cost}
+                  {Number.isNaN(formData.totalCost) ? 0 : formData.totalCost}
                 </span>
               </div>
             </div>
