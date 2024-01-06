@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaTwitter, FaFacebookF } from 'react-icons/fa6';
 import { TfiGoogle } from 'react-icons/tfi';
 import { FaPinterestP } from 'react-icons/fa';
 import { logout } from '../../redux/user/userSlice';
 import logo from '../../assets/logo.png';
+import { selectCarsStatus } from '../../redux/cars/carsSlice';
 
 const Navigation = ({ isNavigationOpen }) => {
   const dispatch = useDispatch();
+  const status = useSelector(selectCarsStatus);
+  const cars = useSelector((state) => state.cars.items);
+  const id = status === 'succeeded' && (cars[0]?.id);
+  const pathname = window.location.pathname.split('/')[1];
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -23,19 +28,19 @@ const Navigation = ({ isNavigationOpen }) => {
 
       <ul className="navigation-list">
         <li className="navigation-item">
-          <NavLink to="/dashboard">Home</NavLink>
-        </li>
-        {/* <li className="navigation-item">
-          <NavLink to="/reserve-form">Reserve Form</NavLink>
-        </li> */}
-        <li className="navigation-item">
-          <NavLink to="/my-reservations">My Reservations</NavLink>
+          <Link className={pathname === 'dashboard' || pathname === 'items' ? 'active' : ''} to="/dashboard">Cars</Link>
         </li>
         <li className="navigation-item">
-          <NavLink to="/add-car-item">Add Car Item</NavLink>
+          <Link className={pathname === 'reserve-form' ? 'active' : ''} to={id ? `/reserve-form/${id}` : '/dashboard'}>Reserve Form</Link>
         </li>
         <li className="navigation-item">
-          <NavLink to="/delete-car-item">Delete Car Item</NavLink>
+          <Link className={pathname === 'my-reservations' ? 'active' : ''} to="/my-reservations">My Reservations</Link>
+        </li>
+        <li className="navigation-item">
+          <Link className={pathname === 'add-car-item' ? 'active' : ''} to="/add-car-item">Add Car Item</Link>
+        </li>
+        <li className="navigation-item">
+          <Link className={pathname === 'delete-car-item' ? 'active' : ''} to="/delete-car-item">Delete Car Item</Link>
         </li>
       </ul>
 

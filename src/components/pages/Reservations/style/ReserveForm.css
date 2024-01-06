@@ -12,6 +12,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 2rem;
 }
 
 .car-details-container {
@@ -19,7 +20,7 @@ h1 {
 }
 
 .car-details-container h3 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
 }
 
@@ -36,6 +37,7 @@ h1 {
 .reserve-form-container label {
   display: block;
   margin-bottom: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .reserve-form-container input,
@@ -51,6 +53,7 @@ h1 {
 }
 
 .cost-details div {
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   font-size: 1.4rem;
@@ -75,7 +78,7 @@ h1 {
 }
 
 .reserve-form-container button:hover {
-  background-color: #45a049;
+  background-color: var(--color-secondary);
 }
 
 @media screen and (max-width: 768px) {
