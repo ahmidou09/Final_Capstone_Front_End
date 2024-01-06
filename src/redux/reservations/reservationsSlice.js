@@ -1,4 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 const baseUrl = 'http://127.0.0.1:3000';
 
@@ -10,7 +13,7 @@ const initialState = {
 
 export const createReserve = createAsyncThunk('reservations/createReserve', async (reservationData) => {
   try {
-    const response = await fetch(`${baseUrl}/users/${reservationData.user_id}/reservations`, {
+    const response = await fetch(`${baseUrl}/reservations`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,23 +40,12 @@ export const createReserve = createAsyncThunk('reservations/createReserve', asyn
   }
 });
 
-export const getReservations = createAsyncThunk('reservations/getReservations', async (userId) => {
+export const getReservations = createAsyncThunk('reservations/getReservations', async () => {
   try {
-    const response = await fetch(`${baseUrl}/users/${userId}/reservations`, {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.result;
-  } catch (error) {
-    throw new Error(error.message);
+    const response = await axios.get('http://localhost:3000/reservations');
+    return response.data.result;
+  } catch (err) {
+    return err.message;
   }
 });
 
