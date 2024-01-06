@@ -51,7 +51,7 @@ export const getReservations = createAsyncThunk('reservations/getReservations', 
 
 export const deleteReservation = createAsyncThunk('reservations/deleteReservation', async ({ userId, reservationId }) => {
   try {
-    const response = await fetch(`${baseUrl}/users/${userId}/reservations/${reservationId}`, {
+    const response = await fetch(`${baseUrl}/reservations/${reservationId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
