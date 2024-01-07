@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1704597404607" clover="3.2.0">
+  <project timestamp="1704597404607" name="All files">
+    <metrics statements="52" coveredstatements="26" conditionals="14" coveredconditionals="3" methods="20" coveredmethods="3" elements="86" coveredelements="32" complexity="0" loc="52" ncloc="52" packages="3" files="5" classes="5"/>
+    <package name="components.pages.Car">
+      <metrics statements="13" coveredstatements="11" conditionals="12" coveredconditionals="3" methods="4" coveredmethods="2"/>
+      <file name="Cars.jsx" path="D:\Documents\Git Hub\cruise-fleet-frontend\src\components\pages\Car\Cars.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+      <file name="CarsList.jsx" path="D:\Documents\Git Hub\cruise-fleet-frontend\src\components\pages\Car\CarsList.jsx">
+        <metrics statements="6" coveredstatements="4" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.shared">
+      <metrics statements="5" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="CustomArrow.jsx" path="D:\Documents\Git Hub\cruise-fleet-frontend\src\components\shared\CustomArrow.jsx">
+        <metrics statements="3" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="LoadingComponent.jsx" path="D:\Documents\Git Hub\cruise-fleet-frontend\src\components\shared\LoadingComponent.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux.cars">
+      <metrics statements="34" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="1"/>
+      <file name="carsSlice.js" path="D:\Documents\Git Hub\cruise-fleet-frontend\src\redux\cars\carsSlice.js">
+        <metrics statements="34" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

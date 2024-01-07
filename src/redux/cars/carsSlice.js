@@ -19,7 +19,7 @@ export const fetchCars = createAsyncThunk('cars/fetchCars',
           },
         },
       );
-      const data = await response.data.result.items;
+      const data = response.data.result.items;
       return data;
     } catch (error) {
       throw new Error(error);
@@ -67,14 +67,18 @@ export const carsSlice = createSlice({
     builder
       .addCase(fetchCars.pending, (state) => {
         state.status = 'loading';
+        console.log('Loading');
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.items = action.payload;
+        console.log('Action payload:', action.payload);
+        console.log('Updated state:', state);
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+        console.log('fail');
       })
       .addCase(addCar.fulfilled, (state, action) => {
         state.items.push(action.payload);
