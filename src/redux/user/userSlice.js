@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.withCredentials = true;
-
 export const login = createAsyncThunk('users/login', async (payload) => {
   try {
     const response = await axios.post('http://localhost:3000/sessions', payload, { withCredentials: true });
