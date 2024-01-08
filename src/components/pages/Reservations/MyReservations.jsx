@@ -58,6 +58,7 @@ const MyReservations = () => {
           </thead>
           <tbody>
             {reservations
+              .filter((reservation) => reservation.user_id === user.id)
               .map((userReservation) => (
                 <tr key={userReservation.id}>
                   <td>{formatDate(userReservation.start)}</td>
