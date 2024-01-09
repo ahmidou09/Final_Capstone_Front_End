@@ -23,7 +23,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Budget_app] <a name="about-project"></a>
+# 📖 [Cruise-fleet] <a name="about-project"></a>
 
 **[Cruise-fleet]** is a mobile web application where you can manage car reservations: you have a list of cars ready for rent, and you can see how much money you spent daily based on your choice.
 
