@@ -35,6 +35,9 @@ This is the frontend side of the project. You can go to the backend side followi
 
 [kanban board](https://github.com/users/Armynerh/projects/7)
 
+![kanban_page1](./src/assets/kanban_1.png)
+![kanban_page2](./src/assets/kanban_2.png)
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
