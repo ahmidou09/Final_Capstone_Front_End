@@ -1,197 +1,70 @@
-<a name="readme-top"></a>
+# Getting Started with Create React App
 
-<!-- TABLE OF CONTENTS -->
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# 📗 Table of Contents
+## Available Scripts
 
-- [📖 About the Project](#about-project)
-  - [Kanban Board](#kanban-board)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+In the project directory, you can run:
 
-<!-- PROJECT DESCRIPTION -->
+### `npm start`
 
-# 📖 [Cruise-fleet] <a name="about-project"></a>
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**[Cruise-fleet]** is a mobile web application where you can manage car reservations: you have a list of cars ready for rent, and you can see how much money you spent daily based on your choice.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-This is the frontend side of the project. You can go to the backend side following this link:
+### `npm test`
 
-[Full Stack Capstone - Backend](https://github.com/ahmidou09/cruise-fleet-frontend)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Kanban Board <a name="kanban-board"></a>
+### `npm run build`
 
-[kanban board](https://github.com/users/Armynerh/projects/7)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## 🛠 Built With <a name="built-with"></a>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Tech Stack <a name="tech-stack"></a>
+### `npm run eject`
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://www.w3schools.com/html/">HTML</a></li>
-    <li><a href="https://www.w3schools.com/css/">CSS</a></li>
-    <li><a href="https://react.dev/">React</a></li>
-    <li><a href="https://redux.js.org/">Redux</a></li>
-  </ul>
-</details>
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
-  </ul>
-</details>
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-<details>
-  <summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-<!-- Features -->
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### Key Features <a name="key-features"></a>
+## Learn More
 
-- See a list of cars
-- See the details of each car
-- Make a reservation to the car
-- Add a car Item
-- Delete a car Item
-- List all reservations for a given car
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-<p align="right"><a href="#readme-top">👆</a></p>
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-<!-- LIVE DEMO -->
+### Code Splitting
 
-### 🚀 Live Demo <a name="live-demo"></a>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-You can find the live demo [here!](https://cruisefleet.onrender.com/)
+### Analyzing the Bundle Size
 
-<p align="right"><a href="#readme-top">👆</a></p>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-<!-- Getting Started -->
+### Making a Progressive Web App
 
-## 💻 Getting Started <a name="getting-started"></a>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-To run the project locally, follow these steps.
+### Advanced Configuration
 
-### Prerequisites
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-In order to run this project you need to:
+### Deployment
 
-- Install [Git](https://git-scm.com/)
-- Install [Node](https://nodejs.org/en/download)
-- Install a code editor, We suggest [VsCode](https://code.visualstudio.com/)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### Setup
+### `npm run build` fails to minify
 
-Clone the repo into your local machine:
-
-```bash
-git clone git@github.com:ahmidou09/cruise-fleet-frontend.git
-```
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Usage
-
-To start you can open your terminal and in the folder write
-
-```bash
-npm run dev
-```
-
-<p align="right"><a href="#readme-top">👆</a></p>
-
-<!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
-👤 **Author1**
- *[Kenny Henshaw]*
-
-- GitHub: [Armynerh](https://github.com/Armynerh)
-- LinkedIn: [Kehinde Henshaw](https://www.linkedin.com/in/kehinde-aminah-h/)
-
-👤 **Author2**
- *[EL MEHDI AHMIDOU]*
-
-- GitHub: [ahmidou09](https://github.com/ahmidou09)
-
-👤 **Author3**
- *[Ahmed Salah]*
-
-- GitHub: [ahmed025566](https://github.com/ahmed025566)
-
-👤 **Author4**
- *[Kleber Alexander Saavedra Garcia]*
-
-- GitHub: [alexansaa](https://github.com/alexansaa)
-
-<p align="right"><a href="#readme-top">👆</a></p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-- Implement authentication
-- Implement authorization
-- Deploy the app online
-
-<p align="right"><a href="#readme-top">👆</a></p>
-
-<!-- Contributing -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right"><a href="#readme-top">👆</a></p>
-
-<!-- Show your support -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-If you like this project leave a start for it.
-
-<p align="right"><a href="#readme-top">👆</a></p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-We would like to thank Microverse for helping us in the journey to become a Fullstack developer.
-
-Special thanks to Murat Korkmaz, on providing an awesome design! https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign
-
-<p align="right"><a href="#readme-top">👆</a></p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./LICENSE) licensed.
-
-<p align="right"><a href="#readme-top">👆</a></p>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

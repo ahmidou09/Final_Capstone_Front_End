@@ -26,7 +26,6 @@ const ReserveForm = () => {
   const navigate = useNavigate();
   const { carId } = useParams();
   const [car, setCar] = useState(status === 'succeeded' && cars.find((car) => car.id === Number(carId)));
-
   const [formData, setFormData] = useState({
     start: '',
     finish: '',
@@ -202,7 +201,6 @@ const ReserveForm = () => {
             >
               Reserve Now
             </button>
-
           </form>
         </div>
 
