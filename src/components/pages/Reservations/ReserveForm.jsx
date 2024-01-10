@@ -26,7 +26,7 @@ const ReserveForm = () => {
   const navigate = useNavigate();
   const { carId } = useParams();
   const [car, setCar] = useState(status === 'succeeded' && cars.find((car) => car.id === Number(carId)));
-  // const car = status === 'succeeded' && cars.find((car) => car.id === Number(carId));
+
   const [formData, setFormData] = useState({
     start: '',
     finish: '',
@@ -191,7 +191,18 @@ const ReserveForm = () => {
               </div>
             </div>
 
-            <button type="submit">Reserve Now</button>
+            <button
+              type="submit"
+              disabled={!car.availability}
+              style={{
+                opacity: car.availability ? 1 : 0.5,
+                cursor: car.availability ? 'pointer' : 'not-allowed',
+                backgroundColor: car.availability ? '#97bf0f' : '#95a5a6',
+              }}
+            >
+              Reserve Now
+            </button>
+
           </form>
         </div>
 

@@ -118,7 +118,7 @@ npm install
 To start you can open your terminal and in the folder write
 
 ```bash
-npm start
+npm run dev
 ```
 
 <p align="right"><a href="#readme-top">👆</a></p>
