@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const BASE_URL = 'https://cruise-fleet-baknd.onrender.com'
+const BASE_URL = 'https://cruise-fleet-baknd.onrender.com';
 const initialState = {
   items: [],
   status: 'idle',

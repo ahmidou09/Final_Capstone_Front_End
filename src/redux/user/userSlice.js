@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const BASE_URL = 'https://cruise-fleet-baknd.onrender.com'
+const BASE_URL = 'https://cruise-fleet-baknd.onrender.com';
 export const login = createAsyncThunk('users/login', async (payload) => {
   try {
     const response = await axios.post(`${BASE_URL}/sessions`, payload, { withCredentials: true });
