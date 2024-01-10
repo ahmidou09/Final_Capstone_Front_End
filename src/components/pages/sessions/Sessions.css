@@ -1,0 +1,47 @@
+.sessions-container {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-box {
+  margin-bottom: 3rem;
+}
+
+.input-container {
+  margin-bottom: 1.5rem;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 1.4rem 0.8rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  box-sizing: border-box;
+}
+
+.login-button {
+  margin-top: 1rem;
+  background-color: transparent !important;
+  color: black !important;
+  text-align: start;
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+
+.sessions-container button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.error-message {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: red;
+  text-align: center;
+}

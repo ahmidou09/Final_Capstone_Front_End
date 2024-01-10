@@ -1,0 +1,127 @@
+.navigation {
+  display: flex;
+  min-width: 20rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 1px solid var(--color-grey-light-2);
+  height: 100vh;
+  padding-left: 1rem;
+  font-size: 1.6rem;
+}
+
+.logo-container {
+  padding: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.logo {
+  width: 10rem;
+}
+
+.navigation-item {
+  margin-bottom: 2rem;
+}
+
+.navigation-list {
+  margin-bottom: 3rem;
+}
+
+.navigation-item a {
+  display: block;
+  text-decoration: none;
+  font-family: var(--font-cocogoose);
+  color: var(--color-grey-dark);
+  padding: 0.5rem 1rem;
+}
+
+.active {
+  background-color: var(--color-primary);
+  color: var(--color-white) !important;
+}
+
+.log-out {
+  background-color: var(--color-grey-light-2);
+  color: var(--color-grey-dark);
+}
+
+.log-out:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.social-media-icons {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.social-media-icons li {
+  margin-right: 1rem;
+}
+
+.social-media-icons li svg {
+  font-size: 1.4rem;
+}
+
+.copyright p {
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  letter-spacing: 2px;
+}
+
+.toggle-container {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+}
+
+.navigation-open {
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+    background-color: white;
+    min-width: 40%;
+  }
+
+  .navigation-open {
+    transform: translateX(0);
+  }
+
+  .toggle-container {
+    display: block;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .toggle-btn {
+    background-color: transparent;
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navigation {
+    min-width: 60%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navigation {
+    min-width: 80%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navigation {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,48 @@
+.add-car-container {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.addCarForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.addCarForm label {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.6rem;
+}
+
+.addCarForm input,
+.addCarForm textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.addCarForm button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.addCarForm button:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  .add-car-container {
+    padding: 3rem;
+  }
+
+  .addCarForm label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
